@@ -15,16 +15,15 @@ class Crawl
     # API Base URL
     # https://api.mailgun.net/v3/mg.doublegeek.co
     # API Key
-    # key-1c997ce3dbe2d26d5a3ec6601f28960f
-    mg_client = Mailgun::Client.new 'key-1c997ce3dbe2d26d5a3ec6601f28960f'
-    message_params =  { from: 'Vipin Nagpal <vipin@doublegeek.co>',
-                        to:   'vipin.itm@gmail.com',
+    mg_client = Mailgun::Client.new 'key'
+    message_params =  { from: 'abc@email.com',
+                        to:   'xyz@email.com',
                         subject: 'Looking forward to work with you',
                         html: "<p>Hi there,</p>
 
 <p>I hope you're having a great day!</p>
 
-<p>My name is Vipin Nagpal, I am the founder of DoubleGeek. DoubleGeek is a community of developers dedicated to learning and sharing latest design and development tips through the public platform. We also specialize in building scalable web and mobile applications of all kind. We have been helping some really cool startups with all their engineering efforts for last 5 years.</p>
+<p>I am the founder of DoubleGeek. DoubleGeek is a community of developers dedicated to learning and sharing latest design and development tips through the public platform. We also specialize in building scalable web and mobile applications of all kind. We have been helping some really cool startups with all their engineering efforts for last 5 years.</p>
 
 <p>We have worked with companies like MyTime, WeWork, Disney, Best Buy, Chipotle and more. Although our portfolio consists of some great names, we do not charge premium rates.</p>
 
@@ -34,12 +33,12 @@ class Crawl
 
 <p>PS: We are running some great offers on our services for next two months. Ask us anything by replying to this email.</p>
 
-<p>Cheers!</p> <p>Vipin Nagpal</p> <p><a href='http://www.doublegeek.co'>doublegeek.co | +91 9990222687</p>",
+<p>Cheers!</p> <p>Vipin Nagpal</p> <p><a href='http://www.doublegeek.co'>doublegeek.co</p>",
                         text:    "Hi there,
 
 I hope you're having a great day!
 
-My name is Vipin Nagpal, I am the founder of DoubleGeek. DoubleGeek is a community of developers dedicated to learning and sharing latest design and development tips through the public platform. We also specialize in building scalable web and mobile applications of all kind. We have been helping some really cool startups with all their engineering efforts for last 5 years.
+I am the founder of DoubleGeek. DoubleGeek is a community of developers dedicated to learning and sharing latest design and development tips through the public platform. We also specialize in building scalable web and mobile applications of all kind. We have been helping some really cool startups with all their engineering efforts for last 5 years.
 
 We have worked with companies like MyTime, WeWork, Disney, Best Buy, Chipotle and more. Although our portfolio consists of some great names, we do not charge premium rates.
 
@@ -50,9 +49,7 @@ In case you don't have any work for us right now, please refer us to anyone you 
 PS: We are running some great offers on our services for next two months. Ask us anything by replying to this email.
 
 Cheers!
---
-Vipin Nagpal
-doublegeek.co | +91 9990222687"
+--"
                       }
 
     addrs  = Address.all(:sent_count.lt => 1 )
